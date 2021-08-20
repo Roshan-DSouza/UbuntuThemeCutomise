@@ -53,3 +53,21 @@ window.ssd headerbar.titlebar button.titlebutton {
 
 3. Change system fonts:
 Open Gnome Tweak tool -> Fonts -> Change font and size
+
+3. Adding .desktop to Ubuntu dock
+a. Write .desktop file
+--
+[Desktop Entry]
+Type=Application
+Terminal=false
+Name=Click-Script
+Icon=/usr/share/icons/Adwaita/48x48/apps/accessories-character-map.png
+#Exec=gnome-terminal -e "bash -c '/home/.../run.sh;$SHELL'"
+Exec=/home/.../run.sh
+Categories=Application;
+Name[en_IN]=attn.desktop
+--
+b. copy the .desktop file to:
+/home/<user>/.local/share/applications
+c. Do search application from Dock, then do add to favourite
+d. logout and login to see the icon shortcut on ubuntu dock
