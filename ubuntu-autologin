@@ -1,0 +1,16 @@
+https://help.ubuntu.com/community/AutoLogin
+
+- Enabling automatic Login after suspend
+Type gconf-editor in a terminal (Alt+Ctrl+T to call the terminal).
+Go to apps/gnome-power-manager/locks
+Check "use_screensaver_settings".
+If still asked for password, you can (also in gconf-editor) go to desktop/gnome/lockdown and check: "disable_lock_screen"
+
+- Enabling AutoLogin from command line
+In Ubuntu 14.04:
+
+sudo mkdir /etc/lightdm/lightdm.conf.d
+sudo nano /etc/lightdm/lightdm.conf.d/50-myconfig.conf
+
+[SeatDefaults]
+autologin-user=USERNAME
