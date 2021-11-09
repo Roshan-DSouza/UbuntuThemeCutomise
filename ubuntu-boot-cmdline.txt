@@ -1,0 +1,14 @@
+Start Ubuntu in Console mode
+
+##1. Enabled text mode, edit /etc/default/grub 
+GRUB_CMDLINE_LINUX_DEFAULT="text"
+GRUB_TERMINAL=console
+
+After saving changes you need to run:
+sudo update-grub
+sudo systemctl enable multi-user.target --force
+sudo systemctl set-default multi-user.target
+
+##2. Undoing text-mode
+sudo systemctl enable graphical.target --force
+sudo systemctl set-default graphical.target 
